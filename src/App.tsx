@@ -54,7 +54,7 @@ function App() {
         <button style={{ padding: '1rem', border: '1px solid #ccc', margin: '1rem ', borderRadius: '8px', alignContent: "center" }} onClick={resources}>Resources</button>
         <button style={{ padding: '1rem', border: '1px solid #ccc', margin: '1rem ', borderRadius: '8px', alignContent: "center" }} onClick={history}>History</button>
       </div>
-      <h1 style={{ textAlign: 'center', fontSize: '3rem', marginTop: '1rem' }}>{data.name}</h1>
+      <h1 style={{ textAlign: 'center', fontSize: '3rem', marginTop: '1rem' }}>{ data ? (data.name) : null}</h1>
       <div>
         {screen === 'location' ? (
           <>
