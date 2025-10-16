@@ -70,7 +70,12 @@ function App() {
 
           </>
         ) : null}
-
+        {screen === 'resources' ? (
+          <>
+          <h2 style={{ textAlign: 'center', fontSize: '2rem', marginTop: '2rem' }}>Resources</h2>
+          <Resources data={data.resources} />
+          </>
+        ) : null}
 
 
       </div>
