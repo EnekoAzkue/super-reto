@@ -63,7 +63,13 @@ function App() {
           </>
 
         ) : null}
+        {screen === 'defense' ? (
+          <>
+            <h2 style={{ textAlign: 'center', fontSize: '2rem', marginTop: '2rem' }}>Defenses</h2>
+            <Defenses data={data.defenses} />
 
+          </>
+        ) : null}
 
 
 
