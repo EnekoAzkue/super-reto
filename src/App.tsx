@@ -12,32 +12,43 @@ function App() {
         background: '#dec29a',
       }}
     >
-<header
-  style={{
-    backgroundColor: '#3F4321',
-    color: '#D9C7A1',
-    position: 'relative',
-    padding: '1rem 2rem',
-    display: 'flex',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    borderBottom: '2px solid #9AA35A'
-  }}
->
-<h1
-  style={{
-    position: 'absolute',
-    left: '50%',
-    transform: 'translateX(-50%)',
-    margin: 0,
-    fontSize: '2.5rem',
-    letterSpacing: '0.3rem',
-    color: '#D9C7A1'
-  }}
->
-  AFTER LIFE
-</h1>
-
+      <header
+        style={{
+          backgroundColor: '#3F4321',
+          color: '#D9C7A1',
+          position: 'relative',
+          padding: '1rem 2rem',
+          display: 'flex',
+          justifyContent: 'flex-end',
+          alignItems: 'center',
+          borderBottom: '2px solid #9AA35A',
+        }}
+      >
+        <h1
+          style={{
+            position: 'absolute',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            margin: 0,
+            fontSize: '2.5rem',
+            letterSpacing: '0.3rem',
+            color: '#D9C7A1',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem', 
+          }}
+        >
+          AFTER
+          <img
+            src="/logo.png" 
+            alt="Logo"
+            style={{
+              height: '40px', 
+              verticalAlign: 'middle',
+            }}
+          />
+          LIFE
+        </h1>
 
         <div>
           <button style={btnStyle} onClick={() => setScreen('')}>Home</button>
@@ -45,6 +56,8 @@ function App() {
           <button style={btnStyle} onClick={() => setScreen('aboutUs')}>About Us</button>
         </div>
       </header>
+
+
 
 
       <div>

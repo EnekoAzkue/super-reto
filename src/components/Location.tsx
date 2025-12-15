@@ -15,7 +15,7 @@ const Location = () => {
       <div
         style={{
           position: 'relative',
-          paddingBottom: '40%', // aumenta la altura del mapa
+          paddingBottom: '40%',
           height: 0,
           overflow: 'hidden',
           borderRadius: '8px',
