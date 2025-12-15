@@ -1,42 +1,38 @@
 import React from 'react';
-import LocationProps from './interfaces/LocationProps';
 
-const Location = ({ data }: LocationProps) => {
-
-  const sortedLandmarks = data.nearbyLandmarks.sort((a, b) => a.distance - b.distance);
-
-  const getLandmarkColor = (type: string) => {
-    switch (type) {
-      case 'Cave':
-        return 'red';
-      case 'Ruins':
-        return 'yellow';
-      case 'Town':
-        return 'blue';
-      default:
-        return 'black';
-    }
-  };
-
+const Location = () => {
   return (
-    <div style={{ padding: '1rem', border: '1px solid #ccc', margin: '1rem 25rem', borderRadius: '8px', alignContent: "center" }}>
-      <div style={{ marginBottom: '1rem' }}>
-        <p><strong>Continent:</strong> {data.continent}</p>
-        <p>
-          <strong>Coordenate:</strong> Latitude {data.coordinates.latitude.toFixed(6)}, 
-          Longitude {data.coordinates.longitude.toFixed(6)}
-        </p>
-      </div>
-
-      <div>
-        <h3><strong>Near landmarks:</strong></h3>
-        <ul>
-          {sortedLandmarks.map((landmark, i) => (
-            <li key={i} style={{ color: getLandmarkColor(landmark.type) }}>
-              <strong>{landmark.name}</strong> - {landmark.type} ({landmark.distance} km)
-            </li>
-          ))}
-        </ul>
+    <div
+      style={{
+        padding: '1rem',
+        margin: '2rem auto',
+        maxWidth: '95%',
+        borderRadius: '12px',
+        border: '1px solid #9AA35A',
+        backgroundColor: '#3F4321',
+      }}
+    >
+      <div
+        style={{
+          position: 'relative',
+          paddingBottom: '40%', // aumenta la altura del mapa
+          height: 0,
+          overflow: 'hidden',
+          borderRadius: '8px',
+        }}
+      >
+        <iframe
+          src="https://www.google.com/maps?q=San+Sebastián,+España&output=embed"
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            border: 0,
+          }}
+          loading="lazy"
+        />
       </div>
     </div>
   );
