@@ -35,15 +35,15 @@ function App() {
             color: '#D9C7A1',
             display: 'flex',
             alignItems: 'center',
-            gap: '0.5rem', 
+            gap: '0.5rem',
           }}
         >
           AFTER
           <img
-            src="/logo.png" 
+            src="/logo.png"
             alt="Logo"
             style={{
-              height: '40px', 
+              height: '40px',
               verticalAlign: 'middle',
             }}
           />
@@ -71,6 +71,8 @@ function App() {
               alt="After Life"
               style={{ display: 'block', margin: '2rem auto', maxWidth: '80%', borderRadius: '8px' }}
             />
+            <h2 style={{ textAlign: 'center', fontSize: '1.5rem', margin: '2rem' }}>
+              Second life. Real worth.            </h2>
           </>
         )}
         {screen === 'location' && (
