@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import Location from './components/Location'
-import logo from './assets/logo.png'
 
 function App() {
   const [screen, setScreen] = useState<any>('')
@@ -55,7 +54,7 @@ function App() {
               Welcome to After Life
             </h2>
             <img
-              src={logo}
+              src='/logo.png'
               alt="After Life"
               style={{ display: 'block', margin: '2rem auto', maxWidth: '80%', borderRadius: '8px' }}
             />
