@@ -8,8 +8,8 @@ const Location = () => {
         margin: '2rem auto',
         maxWidth: '95%',
         borderRadius: '12px',
-        border: '1px solid #9AA35A',
-        backgroundColor: '#3F4321',
+        border: '1px solid #5ab98b',
+        backgroundColor: '#5ab98b',
       }}
     >
       <div
