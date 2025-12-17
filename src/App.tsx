@@ -7,9 +7,9 @@ function App() {
   const [screen, setScreen] = useState<any>('')
 
   const handleScreenChange = (newScreen: string) => {
-  setScreen(newScreen);
-  window.scrollTo({ top: 0, behavior: 'smooth' }); // sube al inicio
-};
+    setScreen(newScreen);
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // sube al inicio
+  };
 
 
   return (
@@ -67,76 +67,86 @@ function App() {
           </h1>
 
           <div>
-<button style={btnStyle} onClick={() => handleScreenChange('')}>Home</button>
-<button style={btnStyle} onClick={() => handleScreenChange('location')}>Location</button>
-<button style={btnStyle} onClick={() => handleScreenChange('aboutUs')}>About Us</button>
-<button style={btnStyle} onClick={() => handleScreenChange('blogs')}>Blogs</button>
+            <button style={btnStyle} onClick={() => handleScreenChange('')}>Home</button>
+            <button style={btnStyle} onClick={() => handleScreenChange('location')}>Location</button>
+            <button style={btnStyle} onClick={() => handleScreenChange('aboutUs')}>About Us</button>
+            <button style={btnStyle} onClick={() => handleScreenChange('blogs')}>Blogs</button>
 
           </div>
         </header>
-
-
-
 
         <div>
           {screen === '' && (
             <>
               <div
                 style={{
-                  minHeight: '67vh',
+                  minHeight: 'calc(100vh - 80px)', // viewport menos header
                   display: 'flex',
                   flexDirection: 'column',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  textAlign: 'center',
-                  padding: '2rem'
                 }}
               >
-                <img
-                  src="/logo.png"
-                  alt="After Life"
-                  style={{
-                    maxWidth: '300px',
-                    width: '80%',
-                    marginBottom: '1.5rem'
-                  }}
-                />
 
-                <h2
+                <div
                   style={{
-                    fontSize: '1.8rem',
-                    fontWeight: 500,
-                    letterSpacing: '0.15rem'
+                    flex: '1 1 55%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    textAlign: 'center',
+                    padding: '2rem',
                   }}
                 >
-                  Second life. Real worth.
-                </h2>
-              </div>
+                  <img
+                    src="/logo.png"
+                    alt="After Life"
+                    style={{
+                      maxWidth: '300px',
+                      width: '80%',
+                      marginBottom: '1.5rem'
+                    }}
+                  />
 
-              <div
-                style={{
-                  padding: '4rem 2rem',
-                  backgroundColor: '#f5f5f5',
-                  textAlign: 'center'
-                }}
-              >
-                <h3 style={{ fontSize: '1.6rem', marginBottom: '1rem' }}>
-                  Sustainable fashion with purpose
-                </h3>
+                  <h2
+                    style={{
+                      fontSize: '1.8rem',
+                      fontWeight: 500,
+                      letterSpacing: '0.15rem'
+                    }}
+                  >
+                    Second life. Real worth.
+                  </h2>
+                </div>
 
-                <p
+                <div
                   style={{
-                    maxWidth: '700px',
-                    margin: '0 auto',
-                    opacity: 0.8,
-                    lineHeight: 1.6
+                    flex: '1 1 35%', // ocupa el resto
+                    padding: '3rem 2rem',
+                    backgroundColor: '#f5f5f5',
+                    textAlign: 'center',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
                   }}
                 >
-                  After Life gives garments a second chance, transforming discarded textiles
-                  into meaningful, sustainable fashion pieces with real value.
-                </p>
-              </div>
 
+                  <h3 style={{ fontSize: '1.6rem', marginBottom: '1rem' }}>
+                    Sustainable fashion with purpose
+                  </h3>
+
+                  <p
+                    style={{
+                      maxWidth: '700px',
+                      margin: '0 auto',
+                      opacity: 0.8,
+                      lineHeight: 1.6
+                    }}
+                  >
+                    After Life gives garments a second chance, transforming discarded textiles
+                    into meaningful, sustainable fashion pieces with real value.
+                  </p>
+                </div>
+              </div>
               <div
                 style={{
                   backgroundColor: '#5ab98b',
@@ -180,14 +190,22 @@ function App() {
               <div
                 style={{
                   backgroundColor: 'white',
-                  height: '50vh',
+                  minHeight: '50vh',
+                  maxHeight: '70vh',
                   display: 'flex',
                   justifyContent: 'center',
                   alignItems: 'center',
                   padding: '2rem',
+                  overflowY: 'auto', // 🔑 CLAVE
                 }}
               >
-                <div style={{ width: '100%', maxWidth: '800px', overflowX: 'auto' }}>
+                <div
+                  style={{
+                    width: '100%',
+                    maxWidth: '800px',
+                    overflowX: 'auto',
+                  }}
+                >
                   <table
                     style={{
                       width: '100%',
@@ -200,8 +218,8 @@ function App() {
                   >
                     <thead>
                       <tr style={{ backgroundColor: '#5ab98b', color: 'white' }}>
-                        <th style={{ padding: '1rem', fontSize: '1.1rem' }}>Material</th>
-                        <th style={{ padding: '1rem', fontSize: '1.1rem' }}>Price (€ / kg)</th>
+                        <th style={{ padding: '0.9rem', fontSize: '1rem' }}>Material</th>
+                        <th style={{ padding: '0.9rem', fontSize: '1rem' }}>Price (€ / kg)</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -214,15 +232,17 @@ function App() {
                         { name: "Blends", price: 2.0 },
                       ].map((material) => (
                         <tr key={material.name} style={{ borderBottom: '1px solid #ddd' }}>
-                          <td style={{ padding: '1rem', textAlign: 'center', fontWeight: 500 }}>{material.name}</td>
-                          <td style={{ padding: '1rem', textAlign: 'center' }}>€{material.price.toFixed(2)}</td>
+                          <td style={{ padding: '0.8rem', textAlign: 'center' }}>{material.name}</td>
+                          <td style={{ padding: '0.8rem', textAlign: 'center' }}>
+                            €{material.price.toFixed(2)}
+                          </td>
                         </tr>
                       ))}
                     </tbody>
-
                   </table>
                 </div>
               </div>
+
 
             </>
           )}
